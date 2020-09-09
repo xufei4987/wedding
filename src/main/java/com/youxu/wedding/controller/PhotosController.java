@@ -11,6 +11,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
+import java.util.List;
 
 @RestController
 @RequestMapping("/photos")
@@ -30,7 +31,7 @@ public class PhotosController {
     }
 
     @PostMapping("/upload/batch")
-    public RespMsg uploadBatch(HttpServletRequest request){
+    public List<RespMsg> uploadBatch(HttpServletRequest request){
         return photosService.uploadBatch(request);
     }
 
